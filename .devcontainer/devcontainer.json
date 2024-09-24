@@ -23,9 +23,8 @@
 				"dbaeumer.vscode-eslint",
 				"xabikos.javascriptsnippets",
 				"pkief.material-icon-theme",
-				"mikaelkristiansson.react-theme",
-				"formulahendry.auto-rename-tag",
-				"oderwat.indent-rainbow",              
+				"mikaelkristiansson87.react-theme-vscode",
+				"formulahendry.auto-rename-tag",              
       		    "wware.snippet-creator",
 				"sviat.vscode-javascript-booster"
 			]

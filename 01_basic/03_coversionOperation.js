@@ -86,14 +86,31 @@ let str2 = " ziQode" // without the whitespace two words will colide
 let str3 = str1 + str2
 //console.log(str3); // output: hello ziqode
 
-//============
+
+
 //complex part
-//============
+//-------------
+/*
 
 console.log("1" + 2); //output = 12 as 1 is string & 2 is number
 console.log(1 + "2"); //output = 12 [ same reason ]
 
-console.log("1" + 2 + 2);
+console.log("1" + 2 + 2);//output: 122
+console.log(1 + 2 + "2");//output: 32  why❓ 
+//answer: In "1" + 2 + 2, the numbers become strings and concatenate to form "122", while in 1 + 2 + "2", the numbers add first to make 3, which then becomes "32" when concatenated with "2".
 
+console.log( 3 + 4 * 6 % 4 );//this is not a good practice
+console.log( (3 + 4 ) * 6 % 4 );//good practice as a good practice we have to specify what we have to do first, second, so on */
 
+//😨 Dont do this type operation
 
+let num1, num2, num3
+num1 = num2 = num3 = 2 + 2
+
+let gameCounter= 100;
+++gameCounter;//this is preincreament
+console.log(gameCounter); // output: 101
+
+//read about inreament: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment
+
+ 
