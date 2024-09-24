@@ -23,10 +23,10 @@
 				"dbaeumer.vscode-eslint",
 				"xabikos.javascriptsnippets",
 				"pkief.material-icon-theme",
-				"mikaelkristiansson87.react-website-theme",
+				"mikaelkristiansson.react-theme",
 				"formulahendry.auto-rename-tag",
-				"oderwat.indent-rainbow",              // Indent Rainbow
-        "wware.snippet-creator",
+				"oderwat.indent-rainbow",              
+      		    "wware.snippet-creator",
 				"sviat.vscode-javascript-booster"
 			]
 		}
