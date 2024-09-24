@@ -15,26 +15,20 @@
 	// "postCreateCommand": "yarn install",
 
 	// Configure tool-specific properties.
-	{
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "esbenp.prettier-vscode",
-        "wayou.vscode-todo-highlight",
-        "dbaeumer.vscode-eslint",
-        "xabikos.javascriptsnippets",
-        "pkief.material-icon-theme",
-        "binaryify.theme-one-dark-pro",
-        "coenraads.bracket-pair-colorizer-2",
-        "formulahendry.auto-rename-tag",
-        "msjsdiag.debugger-for-chrome",
-        "streetsidesoftware.code-spell-checker",
-        "sviat.vscode-javascript-booster"
-      ]
-     
-  }
-}
-
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"esbenp.prettier-vscode",
+				"wayou.vscode-todo-highlight",
+				"dbaeumer.vscode-eslint",
+				"xabikos.javascriptsnippets",
+				"pkief.material-icon-theme",
+				"binaryify.theme-one-dark-pro",
+				"formulahendry.auto-rename-tag",
+				"sviat.vscode-javascript-booster"
+			]
+		}
+	}
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
