@@ -1,7 +1,6 @@
 // ===========================
-// String Prototype Methods in JavaScript (Beginner-Friendly)
+// String Prototype Methods in JavaScript 
 // ===========================
-// Author: Hazrat Mosaddique Ali
 
 // 1. String Declaration
 const name = "Ziqode";  // Example of a string using double quotes
@@ -317,68 +316,3 @@ console.log(str.hasOwnProperty("length")); // Output: true
 // - Not really a string method but often used to format numbers as strings.
 // ----------------
 console.log((123.456).toFixed(2)); // Output: "123.46"
-
-
-
-// ============================
-//      String Methods Summary
-// ============================
-
-/*
-| **Method**              | **Description**                                                  | **Example**                            |
-|-------------------------|------------------------------------------------------------------|----------------------------------------|
-| `anchor()`              | Creates an anchor `<a>` tag.                                     | `"hello".anchor("test")` → `<a name="test">hello</a>` |
-| `at()`                  | Returns character at a specific index (supports negative index). | `"hello".at(1)` → `e`                  |
-| `big()`                 | Wraps string in `<big>` tags. ⚠️                                | `"hello".big()` → `<big>hello</big>`   |
-| `blink()`               | Adds a blinking effect to text using `<blink>` tags. ⚠️         | `"hello".blink()` → `<blink>hello</blink>` |
-| `bold()`                | Wraps the string in `<b>` tags. ⚠️                              | `"hello".bold()` → `<b>hello</b>`      |
-| `charAt()`              | Returns the character at a given index.                          | `"hello".charAt(1)` → `e`              |
-| `charCodeAt()`          | Returns the UTF-16 code for the character at an index.           | `"hello".charCodeAt(1)` → `101`        |
-| `codePointAt()`         | Returns the Unicode code point at an index.  ⭐                   | `"😀".codePointAt(0)` → `128512`       |
-| `concat()`              | Concatenates two or more strings.                                | `"Hello".concat(" World")` → `Hello World` |
-| `endsWith()`            | Checks if the string ends with a specified substring.  ⭐        | `"hello".endsWith("lo")` → `true`      |
-| `includes()`            | Checks if the string contains another substring. ⭐               | `"hello".includes("ell")` → `true`     |
-| `indexOf()`             | Returns the index of the first match of the substring.           | `"hello".indexOf("l")` → `2`           |
-| `isWellFormed()`        | Checks if a string is well-formed UTF-16. ⭐                     | `"hello".isWellFormed()` → `true`      |
-| `italics()`             | Wraps the string in `<i>` tags. ⚠️                               | `"hello".italics()` → `<i>hello</i>`   |
-| `lastIndexOf()`         | Returns the last occurrence of a substring.                      | `"hello".lastIndexOf("l")` → `3`       |
-| `localeCompare()`       | Compares strings in a specific locale.                           | `"a".localeCompare("b")` → `-1`        |
-| `match()`               | Returns matches for a regex pattern.                             | `"hello".match(/l/g)` → `["l", "l"]`   |
-| `matchAll()`            | Returns all matches of a regex as an iterator.  ⭐               | `for (match of "hello".matchAll(/l/g))` |
-| `normalize()`           | Normalizes Unicode characters. ⭐                                | `"café".normalize()` → `café`          |
-| `padEnd()`              | Pads the end of the string with specified characters.            | `"hello".padEnd(10, "!")` → `hello!!!!!` |
-| `padStart()`            | Pads the start of the string with specified characters.          | `"hello".padStart(10, "*")` → `*****hello` |
-| `repeat()`              | Repeats the string a given number of times. ⭐                   | `"ha".repeat(3)` → `hahaha`            |
-| `replace()`             | Replaces the first match of a string with a new substring. ⭐     | `"hello".replace("l", "y")` → `heylo`  |
-| `replaceAll()`          | Replaces all matches of a string with a new substring. ⭐         | `"hello".replaceAll("l", "y")` → `heyyo` |
-| `search()`              | Searches for a match using regex and returns the index.          | `"hello".search(/l/)` → `2`            |
-| `slice()`               | Extracts a section of a string. ⭐                               | `"hello".slice(0, 3)` → `hel`          |
-| `split()`               | Splits a string into an array of substrings.                     | `"a,b,c".split(",")` → `["a", "b", "c"]` |
-| `startsWith()`          | Checks if the string starts with the specified substring. ⭐     | `"hello".startsWith("he")` → `true`    |
-| `substr()`              | Returns part of the string from a start index and length.        | `"hello".substr(1, 3)` → `ell`         |
-| `substring()`           | Returns part of the string between two indexes.                  | `"hello".substring(1, 3)` → `el`       |
-| `toLowerCase()`         | Converts the string to lowercase.                                | `"Hello".toLowerCase()` → `hello`      |
-| `toUpperCase()`         | Converts the string to uppercase.                                | `"hello".toUpperCase()` → `HELLO`      |
-| `trim()`                | Removes whitespace from both ends of the string. ⭐              | `" hello ".trim()` → `hello`           |
-| `valueOf()`             | Returns the primitive value of a string object. ⭐               | `new String("hello").valueOf()` → `hello` |
-| `fontcolor()`           | Sets the font color of the string (Deprecated). ⚠️              | `"hello".fontcolor("red")` → `<font color="red">hello</font>` |
-| `fontsize()`            | Sets the font size of the string (Deprecated). ⚠️                | `"hello".fontsize(5)` → `<font size="5">hello</font>` |
-| `small()`               | Wraps the string in `<small>` tags (Deprecated). ⚠️             | `"hello".small()` → `<small>hello</small>` |
-| `strike()`              | Wraps the string in `<strike>` tags (Deprecated). ⚠️            | `"hello".strike()` → `<strike>hello</strike>` |
-| `sub()`                 | Wraps the string in `<sub>` tags (Deprecated). ⚠️               | `"hello".sub()` → `<sub>hello</sub>`   |
-| `sup()`                 | Wraps the string in `<sup>` tags (Deprecated). ⚠️               | `"hello".sup()` → `<sup>hello</sup>`   |
-| `trimEnd()`             | Removes trailing whitespace from the string.                     | `" hello ".trimEnd()` → `" hello"`     |
-| `trimStart()`           | Removes leading whitespace from the string.                      | `" hello ".trimStart()` → `"hello "`   |
-| `toLocaleLowerCase()`   | Converts the string to lowercase based on locale.                | `"İstanbul".toLocaleLowerCase("tr")` → `istanbul` |
-| `toLocaleUpperCase()`   | Converts the string to uppercase based on locale.                | `"istanbul".toLocaleUpperCase("tr")` → `İSTANBUL` |
-| `toString()`            | Converts an object to a string.                                  | `(123).toString()` → `"123"`           |
-| `fromCharCode()`        | Converts Unicode values to characters. ⭐                        | `String.fromCharCode(72, 101)` → `He`  |
-| `fromCodePoint()`       | Converts Unicode code points to characters. ⭐                   | `String.fromCodePoint(128512)` → 😂   |
-| `raw()`                 | Returns raw string from template literals. ⭐                    | `String.raw` → ``New\nLine`` → `New\nLine` |
-| `isAscii()`             | Checks if all characters are ASCII (introduced in ES2024). ⭐     | `"hello".isAscii()` → `true`           |
-| `trimRight()`           | Alias for `trimEnd()`.                                           | `" hello ".trimRight()` → `" hello"`   |
-| `trimLeft()`            | Alias for `trimStart()`.                                         | `" hello ".trimLeft()` → `"hello "`    |
-| `matchCase()`           | Matches case with another string. ⭐                             | `"HELLO".matchCase("hello")` → `hello` |
-| `hasOwnProperty()`      | Checks if the string has a specific property (Inherited). ⭐     | `"hello".hasOwnProperty("length")` → `true` |
-| `toFixed()`             | Converts a number to a string with fixed decimal points. ⭐      | `(123.456).toFixed(2)` → `"123.46"`    |
-*/
