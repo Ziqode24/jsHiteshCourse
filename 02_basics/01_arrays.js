@@ -90,14 +90,10 @@ const myn2 = myArr.splice(1, 3); // Remove elements starting at index 1, remove 
 
 /*
 =========================
-    Common Array Methods
+     Array Methods
 =========================
 */
 
-// .concat() - Merges two or more arrays without changing the original ones.
-const combinedArr = myArr.concat(myArr2);
-// console.log(combinedArr); 
-// Output: Merged arrays
 
 // .reverse() - Reverses the order of the array's elements.
 myArr.reverse();
@@ -127,11 +123,6 @@ const firstLargeNum = [1, 2, 3, 10, 20].find(num => num > 5);
 // console.log(firstLargeNum); 
 // Output: 10
 
-// .flat() - Flattens a nested array to a single level.
-const nestedArr = [1, [2, [3, [4]]]];
-// console.log(nestedArr.flat(1)); 
-// Output: [1, 2, 3, [4]] (Flatten by 2 levels)
-
 // .fill() - Fills all elements of the array with a static value.
 const filledArr = new Array(5).fill(0);
 // console.log(filledArr); 
@@ -151,22 +142,6 @@ const hasOdd = [2, 4, 5, 8].some(num => num % 2 !== 0);
 const largeNumIndex = [1, 2, 3, 10, 20].findIndex(num => num > 5);
 // console.log(largeNumIndex); 
 // Output: 3
-
-// .from() - Creates a new array instance from an array-like or iterable object.
-const strToArray = Array.from("JavaScript");
-// console.log(strToArray); 
-// Output: ["J", "a", "v", "a", "S", "c", "r", "i", "p", "t"]
-
-/*
-==============================
-    Spread and Destructuring
-==============================
-*/
-
-// Spread Operator - Creates a shallow copy of the array and allows merging.
-const copyArr = [...myArr];
-// console.log(copyArr); 
-// Output: Copy of the original array
 
 // Destructuring - Allows unpacking of values from arrays.
 const [first, second, ...rest] = myArr;
