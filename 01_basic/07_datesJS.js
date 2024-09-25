@@ -22,7 +22,7 @@ console.log(myDate.toDateString()); // Output: "Sat Sep 25 2024"
 console.log(myDate.toLocaleString()); // Output: "9/25/2024, 11:57:28 AM" (based on your locale settings)
 
 // .toISOString() - Converts the Date object to a string following the ISO 8601 format.
-console.log(myDate.toISOString()); // Output: "2024-09-25T05:57:28.123Z"
+console.log(myDate.toISOString()); // Output: "2024-09-25T05:57:28.123Z" | YYYY-MM-DDTHH-mm-ss-sssZ
 
 // .toTimeString() - Converts the time part of the Date object to a string.
 console.log(myDate.toTimeString()); // Output: "11:57:28 GMT-0500 (Central Daylight Time)"
@@ -128,3 +128,5 @@ console.log(modifiedDate.toLocaleString()); // Output: Modified date
 modifiedDate.setHours(10); // Set the hour to 10 AM
 modifiedDate.setMinutes(30); // Set the minute to 30
 console.log(modifiedDate.toLocaleString()); // Output: Modified time and date
+
+
