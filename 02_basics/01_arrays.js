@@ -145,10 +145,8 @@ const largeNumIndex = [1, 2, 3, 10, 20].findIndex(num => num > 5);
 
 // Destructuring - Allows unpacking of values from arrays.
 const [first, second, ...rest] = myArr;
-// console.log(first); 
-// Output: First element
-// console.log(rest);  
-// Output: The rest of the elements except 1st & 2nd element
+// console.log(first); | Output: First element
+// console.log(rest);  | Output: The rest of the elements except 1st & 2nd element
 
 
 /*
