@@ -21,11 +21,12 @@
 		  "terminal.integrated.fontFamily": "monospace",
 		  "workbench.iconTheme": "vs-seti-firacodenerdfontmono",
 		  "editor.fontLigatures": true,
-		  "editor.fontFamily": "'FiraCode Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace"
+		  "editor.fontFamily": "'FiraCode Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace",
+		  "editor.wordWrap": "on"
 		}
 	  }
 	}
   
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
-  }
+}
