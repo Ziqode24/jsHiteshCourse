@@ -23,11 +23,20 @@
 		  "editor.fontLigatures": true,
 		  "editor.fontFamily": "'FiraCode Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace",
 		  "editor.minimap.enabled": false,
-		  "editor.wordWrap": "on"
+		  "editor.wordWrap": "on",
+		  "keyboard.dispatch": "keyCode", // Ensures consistent behavior across platforms
+		  "keybindings": [
+			{
+			  "key": "ctrl+shift+n",
+			  "command": "workbench.action.terminal.clear",
+			  "when": "terminalFocus"
+			}
+		  ]
 		}
 	  }
 	}
   
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
-}
+  }
+  
