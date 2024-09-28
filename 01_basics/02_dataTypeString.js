@@ -142,7 +142,7 @@ console.log(str.padEnd(20, '!')); // Output: Hello, JavaScript!!!
 // ~~~~~~~~~~~~ 21. padStart() ~~~~~~~~~~~~
 // Adds padding to the start of the string until it reaches a specified length.
 // ----------------
-console.log(str.padStart(20, '*')); // Output: *****Hello, JavaScript
+console.log(str.padStart(20, '*')); // Output: *Hello, JavaScript
 
 // ~~~~~~~~~~~~ 22. repeat() ~~~~~~~~~~~~
 // Repeats the string a given number of times.

@@ -12,7 +12,7 @@ console.log("02" > 1);
 console.log(null > 0); //output: false           
 console.log(null == 0); //output: false
 console.log(null >= 0); //output: true 😲how?
-/**
+/
  * REASON:
  * - == and <, >, <=, >= works differently
  * - comparision coverts null to number(0)  

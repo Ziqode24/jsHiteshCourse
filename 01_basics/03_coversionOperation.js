@@ -34,7 +34,7 @@ let valueInNumber = Number(score); //this will convert any data types into numbe
 // console.log(valueInNumber);//output : NaN as 33abc isnot a number but
 // in typeof it shows output: number 'cause we forced it
 
-/**
+/
  * console.log(valueInNumber);
  *
  * Outputs wrt dataTypes
@@ -74,7 +74,7 @@ let negValue = -value // this willl convert value to negative
 // console.log(2+2);//add
 // console.log(2-2);//substract
 // console.log(2*2);//multiply
-// console.log(2**2);//power 
+// console.log(22);//power 
 // console.log(2/2);//divide
 // console.log(2%2);
 //reminder
