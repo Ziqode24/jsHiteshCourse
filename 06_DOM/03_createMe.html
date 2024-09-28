@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music And Code</title>
+</head>
+<body style="background-color: #212121; color: azure;">
+    
+</body>
+<script>
+    // Creating a div element
+    const div = document.createElement('div');
+    console.log(div); // Logs the created div element
+
+    // Setting properties of the div
+    div.className = "main"; // Assigns a class name
+    div.id = Math.round(Math.random() * 10 + 1); // Assigns a random ID between 1 and 10
+    div.setAttribute("title", "generated title"); // Sets a title attribute
+    div.style.color = "coral"; // Sets the text color
+    div.style.padding = "1.25rem"; // Sets padding
+
+    // Adding text to the div using createTextNode
+    const addText = document.createTextNode("Created Me!"); // Creates a text node
+    div.appendChild(addText); // Appends the text node to the div
+
+    // Appending the div to the body
+    document.body.appendChild(div); // Adds the div to the body of the document
+
+</script>
+</html>
+
+<!--
+
+ ====================
+ Key Concepts Summarized:
+ ====================
+
+  1. Creating Elements:
+     - `document.createElement()`: Creates a new HTML element (e.g., div).
+
+  2. Setting Properties:
+     - `className`: Sets or gets the class name of an element.
+     - `id`: Sets or gets the ID of an element.
+     - `setAttribute()`: Sets the value of an attribute on the specified element.
+  
+  3. Styling Elements:
+     - `style.property`: Modifies inline CSS properties (e.g., `style.color`).
+  
+  4. Adding Text:
+     - `document.createTextNode()`: Creates a new text node.
+     - `appendChild()`: Appends a child node (element or text) to a specified parent.
+
+  5. Appending Elements:
+     - `document.body.appendChild()`: Adds an element to the end of the body of the document.
+-->
