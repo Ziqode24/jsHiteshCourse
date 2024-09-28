@@ -1,42 +1,32 @@
 {
-	"name": "Node.js",
-	"image": "mcr.microsoft.com/devcontainers/javascript-node:0-18",
-  
-	"customizations": {
-	  "vscode": {
-		"extensions": [
-		  "esbenp.prettier-vscode",
-		  "wayou.vscode-todo-highlight",
-		  "dbaeumer.vscode-eslint",
-		  "xabikos.javascriptsnippets",
-		  "pkief.material-icon-theme",
-		  "zhuangtongfa.material-theme",
-		  "formulahendry.auto-rename-tag",
-		  "wware.snippet-creator",
-		  "sviat.vscode-javascript-booster",
-		  "zongou.vs-seti-firacodenerdfontmono"
-		],
-		"settings": {
-		  "workbench.colorTheme": "One Dark Pro Darker",
-		  "terminal.integrated.fontFamily": "monospace",
-		  "workbench.iconTheme": "vs-seti-firacodenerdfontmono",
-		  "editor.fontLigatures": true,
-		  "editor.fontFamily": "'FiraCode Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace",
-		  "editor.minimap.enabled": false,
-		  "editor.wordWrap": "on",
-		  "keyboard.dispatch": "keyCode", // Ensures consistent behavior across platforms
-		  "keybindings": [
-			{
-			  "key": "ctrl+shift+n",
-			  "command": "workbench.action.terminal.clear",
-			  "when": "terminalFocus"
-			}
-		  ]
-		}
-	  }
-	}
-  
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+  "name": "Node.js",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:0-18",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "miguelsolorio.symbols",
+        "esbenp.prettier-vscode",
+        "wayou.vscode-todo-highlight",
+        "dbaeumer.vscode-eslint",
+        "xabikos.javascriptsnippets",
+        "zhuangtongfa.material-theme",
+        "formulahendry.auto-rename-tag",
+        "sviat.vscode-javascript-booster",
+        "zongou.vs-seti-firacodenerdfontmono"
+      ],
+      "settings": {
+        "workbench.colorTheme": "One Dark Pro Darker",
+        "terminal.integrated.fontFamily": "monospace",
+        "workbench.iconTheme": "symbols",
+        "editor.fontLigatures": true,
+        "editor.fontFamily": "'FiraCode Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace",
+        "editor.minimap.enabled": false,
+        "editor.wordWrap": "on"
+      }
+    }
   }
-  
+
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
+}
