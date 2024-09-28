@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation Learning</title>
+    <style>
+      .bg-black {
+        background-color: #212121;
+        color: #d4d4d4;
+        padding: 20px;
+      }
+      h1, h2 {
+        font-family: Arial, sans-serif;
+      }
+      p {
+        font-size: 14px;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        padding: 5px;
+        background-color: #333;
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <div>
+      <h1 id="title" class="heading">
+        DOM learning on Chai aur Code
+        <span style="display: none">test text</span>
+      </h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+
+      <!-- Example of a document tree in HTML -->
+      <!-- 
+      Window
+        |
+        +
+      Document
+        |
+        +-- HTML
+              |
+              +-- Head
+              |     +-- Title (Text Node)
+              |     +-- Meta (Attribute)
+              |
+              +-- Body
+                    +-- Div (Attribute)
+                          +-- h1 (Attribute, Text Node)
+                          +-- p (Text Node)
+      -->
+
+      <h2>Lorem ipsum dolor sit.</h2>
+      <p>Lorem ipsum dolor sit amet consectetur.</p>
+      <input type="password" name="pass" />
+
+      <!-- List example -->
+      <ul>
+        <li class="list-item">one</li>
+        <li class="list-item">two</li>
+        <li class="list-item">three</li>
+      </ul>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      /*
+      ==========================
+      | Basic DOM Manipulation  |
+      ==========================
+      */
+
+      // Accessing elements by ID
+      const title = document.getElementById("title");
+
+      // Accessing attributes
+      console.log(title.id); // Log the ID of the element
+      console.log(title.getAttribute('id'));// Accessing attributes
+
+      // Setting attributes (overrides current class)
+      title.setAttribute('class', 'heading test');
+      console.log(title.getAttribute('class')); // Output: "heading test"
+
+      // Applying styles to the title element
+      title.style.backgroundColor = "green";
+      title.style.padding = "2rem";
+      title.style.borderRadius = "12px";
+
+      /*
+      =======================
+      | Content Manipulation |
+      =======================
+      */
+      // Accessing content
+      console.log(title.textContent); // all text, including hidden
+      console.log(title.innerHTML);   // all HTML content
+      console.log(title.innerText);   // visible text only
+
+      // QuerySelector & QuerySelectorAll
+      const firstH2 = document.querySelector("h2");          // First <h2>
+      const titleById = document.querySelector('#title');    // Element by ID
+      const headingByClass = document.querySelector('.heading');  // Element by class
+
+      // Selecting input by attribute
+      const passwordInput = document.querySelector('input[type="password"]');
+
+      /*
+      ==========================
+      | List Item Manipulation  |
+      ==========================
+      */
+      const myul = document.querySelector('ul');
+      const firstLi = myul.querySelector('li');  // First <li> in <ul>
+      firstLi.style.backgroundColor = "green";   // Turning background green
+      firstLi.innerHTML = "five";                // Changing content to 'five'
+
+      /*
+      =======================
+      | querySelectorAll Use |
+      =======================
+      */
+      const allListItems = document.querySelectorAll('li');
+
+      allListItems.forEach((item, index) => {
+        console.log(`Item ${index + 1}: ${item.innerHTML}`);
+      });
+      /*
+        Output:
+        Item 1: five
+        Item 2: two
+        Item 3: three
+      */
+
+      // NodeList vs HTMLCollection:
+      // - NodeList supports forEach, HTMLCollection does not.
+      // Accessing NodeList elements:
+      allListItems[0].style.color = "green";  // Change first list item's color
+      allListItems.forEach(item => {
+        item.style.backgroundColor = "green"; // Turn all <li>'s background green
+      });
+
+      // Converting HTMLCollection to Array
+      const tempClassList = document.getElementsByClassName("list-item");
+      Array.from(tempClassList).forEach(item => {
+        item.style.backgroundColor = "blue";  // Turn all list items background blue
+      });
+
+      // Changing all <h2> elements
+      const allH2 = document.querySelectorAll("h2");
+      allH2.forEach(h => {
+        h.style.color = "coral";
+        h.style.backgroundColor = "yellow";
+        h.style.fontWeight = "900";
+        h.style.padding = "5px";
+        h.innerText = "Hazrat";
+      });
+    </script>
+
+    
+    <script>
+      /*
+      =========================================================
+      | Explanation: DOM Manipulation Concepts                |
+      =========================================================
+
+      1. Accessing elements by ID:
+      - `document.getElementById("title")`: This is used to retrieve an element using its ID. You can use the returned element to further manipulate its properties.
+
+      2. Accessing attributes:
+      - `element.getAttribute('attribute-name')`: Retrieves the value of an attribute (like `id` or `class`) for the selected element.
+
+      3. Modifying attributes:
+      - `element.setAttribute('attribute-name', 'value')`: Changes the value of an attribute (like setting a new class to an element).
+
+      4. Style Manipulation:
+      - Directly modifying CSS properties via `.style`. Example:
+        - `element.style.backgroundColor = "green"`: Sets the background color of the element.
+
+      5. Content Access Methods:
+      - `.textContent`: Returns all the text inside an element, even hidden text.
+      - `.innerHTML`: Returns all HTML content inside the element.
+      - `.innerText`: Returns only visible text, excluding hidden text or elements.
+
+      6. Selecting Elements:
+      - `document.querySelector()`: Selects the first matching element.
+      - `document.querySelectorAll()`: Selects all matching elements and returns a NodeList.
+
+      7. NodeList vs HTMLCollection:
+      - **NodeList** is a collection of nodes and can be looped using `forEach()`.
+      - **HTMLCollection** only contains HTML elements and needs to be converted to an array to use array methods.
+
+      8. Example Use Cases:
+      - Changing list items, changing styles on <h2> elements, and working with different query methods to target HTML elements for manipulation.
+      */
+    </script>
+  </body>
+</html>
