@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Music & Code</title>
+</head>
+<body style="background-color: #212121; color: azure;">
+    <div class="parent">
+        <!-- this is comment -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    // ====================
+    //     DOM Manipulation
+    // ====================
+
+    // Selecting the parent div using querySelector
+    const parent =  document.querySelector('.parent')
+
+    // Accessing children of the parent
+    // console.log(parent.children[1]); // Output: Tuesday div
+    // console.log(parent.children[1].innerHTML); // Output: The inner HTML of Tuesday div
+
+    // Looping through all children of parent and logging their innerHTML
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML) // Outputs all the days (Monday, Tuesday, etc.)
+    }
+
+    // Changing the style of a specific child element
+    parent.children[1].style.color =  "coral"; // Changes the color of Tuesday div to coral
+
+    // Accessing the first and last child elements
+    // console.log(parent.firstElementChild); // Output: Monday div
+    // console.log(parent.lastElementChild); // Output: Thursday div
+
+    // ===========================
+    //  Accessing Child to Parent
+    // ===========================
+    const dayOne = document.querySelector(".day"); // This selects the first .day div (Monday)
+    
+    // Accessing parent element of a child
+    // console.log(dayOne.parentElement); // Output: parent div that wraps the day divs
+
+    // ====================
+    //     Sibling Access
+    // ====================
+    // Accessing next sibling of a day element
+    // console.log(dayOne.nextElementSibling); // Output: Tuesday div
+
+    // ======================
+    //  Nodes vs Elements
+    // ======================
+    // childNodes returns all nodes (including text, comments, etc.)
+    console.log("NODES: ", parent.childNodes); 
+    // Note: There are text nodes created due to line breaks (new lines in the HTML)
+
+    // ====================
+// Key Concepts Summarized:
+// ====================
+
+/*
+  1. Element Selection:
+     - `document.querySelector()`: Selects the first matching element.
+     - `parent.children`: Returns an HTMLCollection of child elements (ignores text/comment nodes).
+
+  2. Element Properties:
+     - `innerHTML`: Gets or sets the HTML content of an element.
+     - `style.property`: Modifies inline CSS (e.g., `style.color` changes text color).
+     - `firstElementChild`, `lastElementChild`: Accesses the first and last child elements.
+
+  3. Traversing DOM:
+     - `parentElement`: Accesses the direct parent of an element.
+     - `nextElementSibling`: Retrieves the next sibling element.
+
+  4. Node vs Element:
+     - `childNodes`: Returns all types of nodes (elements, text, comments).
+     - `children`: Returns only element nodes (ignores text or comment nodes).
+
+  5. Text Nodes:
+     - New lines and spaces in HTML create text nodes, which are part of the DOM. 
+       This is why `childNodes` might include extra nodes compared to `children`.
+*/
+
+
+</script>
+</html>
+
