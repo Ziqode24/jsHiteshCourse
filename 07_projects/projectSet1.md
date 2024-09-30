@@ -98,7 +98,7 @@ const startOver = document.querySelector('.resultParas');
   - playGame: A flag to control whether the game is active or not.
 */
 let prevGuess = [];
-let numGuess = 0;
+let numGuess = 1;
 let playGame = true;
 
 // ==============================
@@ -141,7 +141,7 @@ function validateGame(guess) {
     alert('Please Enter a Number Less Than 101');  // Ensure guess is within range
   } else {
     prevGuess.push(guess);  // Add guess to previous guesses array
-    if (numGuess === 11) {
+    if (numGuess === 10) {
       displayGuess(guess);
       displayMessage(`Game Over. The Random Number was ${randomNum}`);
       endGame();  // End the game if 10 attempts are used
@@ -186,7 +186,7 @@ function displayGuess(guess) {
   userInput.value = '';  // Clear the input field after guess
   guessSlot.innerHTML += `${guess}, `;  // Display the guess in the DOM
   numGuess++;  // Increment the number of guesses
-  remaining.innerHTML = `${10 - numGuess}`;  // Update remaining attempts
+  remaining.innerHTML = `${11 - numGuess}`;  // Update remaining attempts
 }
 
 // ==============================
@@ -237,7 +237,7 @@ function newGame() {
     prevGuess = [];  // Clear previous guesses
     numGuess = 1;  // Reset the guess count
     guessSlot.innerHTML = '';  // Clear previous guesses from the display
-    remaining.innerHTML = `${10 - numGuess}`;  // Reset remaining attempts display
+    remaining.innerHTML = `${11 - numGuess}`;  // Reset remaining attempts display
     userInput.removeAttribute('disabled');  // Re-enable the input field
     startOver.removeChild(newGameButton.parentElement);  // Remove the 'Start New Game' button
     playGame = true;  // Set the play flag to true, allowing a new game
