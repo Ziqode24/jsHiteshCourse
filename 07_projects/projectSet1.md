@@ -2,12 +2,12 @@
 
 [Click for Template](https://stackblitz.com/edit/dom-project-chaiaurcode?file=index.html)
 
-##project2 [ *BMI_Calculator* ]:
+## project2 [ *BMI_CALCULATOR* ]:
 
-```
+```javascript
 const form = document.querySelector('form');
 
-//this will give enpty | it gets value after pageload
+//this will give empty | it gets value after pageload
 // const weight = parseInt(document.querySelector("#weight").value)
 form.addEventListener('submit', function (e) {
   e.preventDefault();
@@ -27,3 +27,24 @@ form.addEventListener('submit', function (e) {
   }
 });
 ```
+
+
+
+
+## project 3 [ *CLOCK* ]
+```javascript
+const time = document.getElementById('clock');
+
+//setInterval
+setInterval(function () {
+  let date = new Date();
+  // console.log(date.toLocaleTimeString())
+  clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
+
+```
+
+
+
+
+
