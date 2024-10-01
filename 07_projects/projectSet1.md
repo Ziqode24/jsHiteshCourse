@@ -208,7 +208,7 @@ function displayMessage(message) {
 /*
   Once the game is over (either through guessing the number or using all attempts),
   this function disables the input field, displays a message, and provides a button
-  to start a new game.
+  to start a new game..
 */
 function endGame() {
   userInput.value = '';  // Clear the input field
