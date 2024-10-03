@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML & Events</title>
+    <style>
+      body {
+        background-color: #2e2e2e; 
+        color: #ffffff; 
+        font-family: 'Unbounded', sans-serif; 
+        margin: 0;
+        padding: 20px;
+      }
+
+      h2 {
+        color: #ffffff; 
+      }
+
+      .image {
+        list-style-type: none; 
+        padding: 0;
+      }
+
+      .box {
+        background-color: #36454f;
+        text-align: center;
+        line-height: 100px;
+        border: 1px solid #ccc;
+        margin: 10px 0; 
+        transition: background-color 0.3s; 
+      }
+
+      .box:hover {
+        background-color: #4f5b61; 
+      }
+
+      a {
+        color: aliceblue; 
+        text-decoration: none; 
+        line-height: 3rem; 
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h2>Hi! We Are Boxes</h2>
+    <div>
+      <ul class="image">
+        <div>
+          <a
+            style="
+              color: aliceblue;
+              font-family: Unbounded;
+              line-height: 3rem;
+              text-decoration: none;
+            "
+            href="https://www.google.com"
+            id="google"
+            >I'm Google</a
+          >
+        </div>
+        <li>
+          <div
+            class="box"
+            id="charcoal"
+            style="
+              background-color: #36454f;
+              text-align: center;
+              line-height: 100px;
+              border: 1px solid #ccc;
+            "
+          >
+            Charcoal
+          </div>
+        </li>
+        <!-- Other boxes are omitted for brevity -->
+      </ul>
+    </div>
+  </body>
+  <script>
+    // =======================================================
+    // Best Practice for Event Handling 
+    // =======================================================
+    /*
+      🔥 Using addEventListener is the recommended way to attach events.
+      It provides flexibility to attach multiple event listeners to the same element
+      and can handle events in different phases (bubbling/capturing).
+      
+      addEventListener Syntax:
+        - element.addEventListener(eventType, eventHandler, useCapture);
+        - eventType: Type of event (e.g., 'click', 'mouseover').
+        - eventHandler: Function to execute when the event occurs.
+        - useCapture: Optional. Specifies whether the event should be executed in the 
+          capture or bubble phase (default is false for bubbling).
+      
+      Benefits:
+        - Separation of concerns (HTML and JavaScript stay separate).
+        - Ability to register multiple listeners for the same event type.
+        - More control over the event propagation phase (useCapture).
+    */
+
+    document.getElementById('charcoal').addEventListener('click', function() {
+      alert('I\'m first :p');
+    }, false);
+
+    // =======================================================
+    // The Event Object 
+    // =======================================================
+    /*
+      ⚡ Every event in JavaScript is accompanied by an Event Object.
+      This object provides information about the event and its context.
+
+      Common Properties:
+        - target: Element that triggered the event.
+        - currentTarget: Element to which the event handler is attached.
+        - clientX, clientY: Coordinates of the mouse pointer at the time of the event.
+        - altKey, ctrlKey, shiftKey: Boolean properties indicating if these keys were pressed.
+        - type: Type of the event (e.g., 'click', 'mouseover').
+        - timeStamp: The time the event occurred.
+
+      Example:
+        When a user clicks on an element, the Event Object holds data like 
+        mouse coordinates, the clicked element, and more.
+
+      Usage Example:
+        - e.preventDefault(): Prevents the default action of an event.
+        - e.stopPropagation(): Stops the event from propagating (bubbling/capturing).
+    */
+
+    // ============================
+    // Event Delegation [IMP TOPIC]
+    // ============================
+    /*
+      Event delegation is a technique where a single event listener is attached to a parent element
+      to handle events for multiple child elements. It works by taking advantage of 
+      "event bubbling", where the event propagates from the child to the parent.
+
+      - Instead of attaching multiple event listeners to child elements, we attach one to the parent.
+      - The event bubbles up to the parent, where we can check which child triggered it using `event.target`.
+      - This technique is efficient and works even when new child elements are dynamically added.
+
+      Benefits:
+        - Memory and performance optimization: fewer event listeners.
+        - Works with dynamically added elements.
+    */
+
+    // Example of Event Delegation
+    document.getElementById('parent').addEventListener('click', function(event) {
+      if (event.target && event.target.classList.contains('child')) {
+        alert(event.target.textContent); // Show the clicked item's text
+      }
+    });
+
+    // =======================================================
+    // Event Propagation 
+    // =======================================================
+    /*
+      🌍 Events propagate in two phases:
+        1. **Event Capturing (Trickling)**: The event travels from the root to the target element.
+        2. **Event Bubbling**: The event travels from the target element up to the root.
+
+      - Capturing and Bubbling are used to handle event delegation, allowing us to
+        attach a single event handler on a parent element, which manages all its children.
+      
+      Example:
+        - When clicking an inner element, the event bubbles up to its parent elements.
+    */
+
+    // =======================================================
+    // Removing a Box on Click 
+    // =======================================================
+    /*
+      🔍 We can remove an element dynamically from the DOM using JavaScript.
+      - We use event delegation on the `.image` class to handle all click events on its child boxes.
+      - By checking if the clicked element has the class `.box`, we can remove the clicked element's parent (`<li>`).
+
+      Key Points:
+        1. Event delegation allows handling events for multiple elements with a single listener.
+        2. The `e.target` property gives access to the clicked element.
+        3. `remove()` is used to remove an element from the DOM.
+
+      Code Explanation:
+      - `e.target.classList.contains('box')`: Checks if the clicked element is a box.
+      - `e.target.parentNode.remove()`: Removes the parent `<li>` element containing the box.
+      - `e.preventDefault()`: Prevents default behavior if a non-box element is clicked (for example, the Google link).
+    */
+    
+    document.querySelector(".image").addEventListener("click", (e) => {
+      // Check if the clicked target has the class "box"
+      if (e.target.classList.contains("box")) {
+        console.log(e.target.className); // Logs the class name of the clicked box
+        e.target.parentNode.remove(); // Removes the clicked box's parent <li>
+      } else {
+        e.preventDefault(); // Prevents default action if not a box
+      }
+    });
+  </script>
+</html>
