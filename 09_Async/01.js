@@ -1,13 +1,13 @@
 /*
 ===============================================================
-   JavaScript Concepts: Detailed Notes
+                         JavaScript Concepts: Detailed Notes
 ===============================================================
 */
 
 /*
-===============================================================
-   1. Synchronous & Single-Threaded JavaScript
-===============================================================
+---------------------------------------------------------------
+                      1. Synchronous & Single-Threaded JavaScript
+---------------------------------------------------------------
 - Synchronous Execution:
   - JavaScript executes code line by line.
   - Each line waits for the previous one to finish before executing.
@@ -22,9 +22,9 @@
 */
 
 /*
-===============================================================
-   2. Execution Context
-===============================================================
+---------------------------------------------------------------
+                      2. Execution Context
+---------------------------------------------------------------
 - Execution Context:
   - The environment where JavaScript code runs, encompassing variables, functions, and scope.
 
@@ -39,9 +39,9 @@
 */
 
 /*
-===============================================================
-   3. Call Stack & Memory Heap
-===============================================================
+---------------------------------------------------------------
+                      3. Call Stack & Memory Heap
+---------------------------------------------------------------
 - Call Stack:
   - A stack structure where function calls are placed.
   - Follows Last In, First Out (LIFO) principle: the last function called is the first to be executed.
@@ -55,9 +55,9 @@
 */
 
 /*
-===============================================================
-   4. Blocking vs Non-blocking Code
-===============================================================
+---------------------------------------------------------------
+                      4. Blocking vs Non-blocking Code
+---------------------------------------------------------------
 - Blocking Code:
   - Stops program execution until a task completes.
   - The next line of code must wait.
@@ -90,9 +90,9 @@ Example: Reading a file asynchronously
 */
 
 /*
-===============================================================
-   5. JavaScript Engine & Event Loop
-===============================================================
+---------------------------------------------------------------
+                      5. JavaScript Engine & Event Loop
+---------------------------------------------------------------
 - JavaScript Engine:
   - Responsible for executing JavaScript code.
   - Comprises the Memory Heap (for data storage) and the Call Stack (for function execution).
@@ -114,7 +114,7 @@ Example: Reading a file asynchronously
 
 /*
 ===============================================================
-   Diagram: JavaScript Engine & Event Loop Flow
+                      Diagram: JavaScript Engine & Event Loop Flow
 ===============================================================
 
 +---------------------+        +---------------------+
@@ -173,30 +173,3 @@ setTimeout(() => {
 
 console.log('End');
 */
-
-// Explained with a Analogy
-
-// 1. Call Stack: The boy calls his girlfriend to ask her out.
-console.log("Boy: Hey, would you like to go out with me?");
-
-// 2. Waiting for Response: She needs to check her schedule (asynchronous task).
-setTimeout(() => {
-    // 3. Callback Queue: After checking her schedule, she sends him a text saying she's free.
-    console.log("Girlfriend: Yes, I'm free on Saturday!");
-}, 120000); // Simulating the time it takes to check her schedule (2 min)
-
-// 4. Event Loop: While waiting, the boy goes back to playing video games.
-console.log("Boy: I'm going to play video games while I wait...");
-
-// 5. Responding: When the boy finishes playing, he checks his phone for messages.
-setTimeout(() => {
-    // This simulates the boy checking his phone after finishing his game
-    console.log("Boy checks his phone.");
-    console.log("Boy: Great! Let's meet at 5 PM."); // Responding to her message
-}, 180000); // Simulating the time spent playing video games (3 min)
-
-// Summary:
-// - Call Stack: Asking her out.
-// - Web API: Waiting for her to check her schedule.
-// - Callback Queue: Her text message.
-// - Event Loop: Checking for new messages.
