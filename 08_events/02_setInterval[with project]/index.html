@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hue Hub</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  transition: all 0.5s ease;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255,255,255,0.7);
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#color-code {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+#stop {
+  background-color: #ff3737;
+}
+
+#stop:hover {
+  background-color: #e22e2e;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>HUE HUB</h1>
+    <p id="color-code">#FFFFFF</p>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
