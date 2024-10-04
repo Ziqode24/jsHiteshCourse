@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Profile</title>
+        <!-- Importing font from Google Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+
+    <style>
+        /* General reset for margin, padding, and box-sizing for all elements */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+
+    <body></body>
+
+    <script>
+        // Creating a container div element for profile card
+        const newDivContainer = document.createElement("div");
+        newDivContainer.setAttribute("id", "container");
+
+        // Styling the container to cover full viewport (100vw x 100vh)
+        newDivContainer.style.width = "100vw";
+        newDivContainer.style.height = "100vh";
+        newDivContainer.style.display = "flex";
+        newDivContainer.style.flexDirection = "column";
+        newDivContainer.style.justifyContent = "center";
+        newDivContainer.style.alignItems = "center";
+        newDivContainer.style.backgroundColor = "#eef0f1"; // Light background color
+        document.body.appendChild(newDivContainer); // Appending container to the body
+
+        // Creating the inner div for the content (profile)
+        const newDivContent = document.createElement("div");
+
+        // Styling the inner content (Profile card) with neumorphism design
+        newDivContent.style.width = "450px";
+        newDivContent.style.height = "500px";
+        newDivContent.style.borderRadius = "12px";
+        newDivContent.style.background =
+            "radial-gradient(circle at 20% 10%, #f5f6f7, #fff)"; // Light gradient for neumorphic effect
+        newDivContent.style.boxShadow =
+            "2px 5px 10px rgba(102,102,102,0.1), -5px -5px 15px rgba(255,255,255,0.9)"; // Soft shadows for 3D effect
+        newDivContent.style.display = "flex";
+        newDivContent.style.flexDirection = "column";
+        newDivContent.style.justifyContent = "space-evenly";
+        newDivContent.style.alignItems = "center";
+        newDivContent.style.overflow = "hidden"; // Ensures content stays within div bounds
+
+        newDivContainer.appendChild(newDivContent); // Appending profile content to container
+
+        // Creating a paragraph element to hold the user's name
+        const para = document.createElement("p");
+        // Creating an image element to display the user's profile picture
+        const image = document.createElement("img");
+
+        // Styling for the paragraph (user's name)
+        para.style.fontFamily = "Unbounded"; // Applying the imported font
+        para.style.fontWeight = "500";
+        para.style.fontSize = "22px"; // Font size for name
+        para.style.color = "#484848"; // Grey color for text
+        para.style.letterSpacing = "0.5px"; // Letter spacing for better readability
+
+        /* API work */
+        // URL of the GitHub user's API endpoint
+        const userUrl = "https://api.github.com/users/Ziqode24";
+        // Creating a new XMLHttpRequest to fetch data from the GitHub API
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", userUrl); // Initializing the request with the GET method
+
+        // Handling the API response
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) { // Checking if the request is complete
+                const userDetails = JSON.parse(xhr.responseText); // Parsing JSON response
+
+                // Setting the user's name in uppercase as paragraph text
+                para.innerText = userDetails.name.toUpperCase();
+
+                // Setting the user's profile picture
+                const userPic = userDetails.avatar_url;
+                image.src = userPic;
+                image.width = 350; // Setting image width
+                image.height = 350; // Setting image height
+                image.style.borderRadius = "50%"; // Making the image circular
+                image.style.boxShadow = "0px 3px 8px rgba(128,128,128,0.5)"; // Soft shadow around the image
+
+                // Appending the image and the paragraph (name) to the profile content div
+                newDivContent.appendChild(image);
+                newDivContent.appendChild(para);
+            }
+        };
+
+        // Sending the request to the server
+        xhr.send();
+    </script>
+</html>
