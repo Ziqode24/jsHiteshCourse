@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await Promises Callbacks</title>
+    <style>
+        :root {
+            --bg-primary: #121212;
+            --bg-secondary: #1e1e1e;
+            --text-primary: #e0e0e0;
+            --text-muted: #9e9e9e;
+            --accent-color: #ff6f61;
+            --highlight-color: #03a9f4;
+            --font-body: "Suse", sans-serif;
+            --shadow-light: rgba(255, 255, 255, 0.1);
+            --shadow-dark: rgba(0, 0, 0, 0.2);
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 5px 5px 15px var(--shadow-dark), -5px -5px 15px var(--shadow-light);
+            width: 90%;
+            max-width: 800px;
+        }
+
+        h1 {
+            color: var(--highlight-color);
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section h2 {
+            color: var(--accent-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.5rem;
+        }
+
+        .section p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .code-snippet {
+            background-color: #2c2c2c;
+            color: #ffffff;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-top: 1rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            box-shadow: inset 5px 5px 15px var(--shadow-dark), inset -5px -5px 15px var(--shadow-light);
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            background: var(--accent-color);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: var(--highlight-color);
+        }
+
+        .output {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: #1e1e1e;
+            color: var(--text-primary);
+            border-radius: 6px;
+            font-size: 1rem;
+            box-shadow: inset 5px 5px 15px var(--shadow-dark), inset -5px -5px 15px var(--shadow-light);
+        }
+
+        .error {
+            color: #ff4444;
+        }
+
+        .success {
+            color: #44ff44;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Async, Await, Promises & Callbacks</h1>
+
+        <!-- Section: Callbacks -->
+        <div class="section">
+            <h2>Callbacks</h2>
+            <p>This section demonstrates how to handle asynchronous code using callbacks.</p>
+            <div class="code-snippet" id="callback-code">
+                <!-- Example code goes here -->
+                // JavaScript callback code will be displayed here
+            </div>
+            <div class="buttons">
+                <button class="btn" id="callback-btn">Run Callback</button>
+            </div>
+        </div>
+
+        <!-- Section: Callback Hell -->
+        <div class="section">
+            <h2>Callback Hell</h2>
+            <p>Example of callback hell where callbacks are nested inside each other.</p>
+            <div class="code-snippet" id="callbackhell-code">
+                <!-- Example code goes here -->
+                // JavaScript callback hell code will be displayed here
+            </div>
+            <div class="buttons">
+                <button class="btn" id="callbackhell-btn">Run Callback Hell</button>
+            </div>
+        </div>
+
+        <!-- Section: Promises -->
+        <div class="section">
+            <h2>Promises</h2>
+            <p>Promises are used to handle asynchronous operations more cleanly.</p>
+            <div class="code-snippet" id="promise-code">
+                <!-- Example code goes here -->
+                // JavaScript promise code will be displayed here
+            </div>
+            <div class="buttons">
+                <button class="btn" id="promise-btn">Run Promise</button>
+            </div>
+        </div>
+
+        <!-- Section: Async Await -->
+        <div class="section">
+            <h2>Async / Await</h2>
+            <p>Async/Await allows for a more synchronous looking asynchronous code.</p>
+            <div class="code-snippet" id="asyncawait-code">
+                <!-- Example code goes here -->
+                // JavaScript async/await code will be displayed here
+            </div>
+            <div class="buttons">
+                <button class="btn" id="asyncawait-btn">Run Async/Await</button>
+            </div>
+        </div>
+
+        <!-- Section: Fetch -->
+        <div class="section">
+            <h2>Fetch API</h2>
+            <p>Using the Fetch API to make network requests asynchronously.</p>
+            <div class="code-snippet" id="fetch-code">
+                <!-- Example code goes here -->
+                // JavaScript fetch code will be displayed here
+            </div>
+            <div class="buttons">
+                <button class="btn" id="fetch-btn">Run Fetch</button>
+            </div>
+        </div>
+
+        <!-- Output -->
+        <div class="output" id="output">
+            <!-- Output will be shown here -->
+            Output will appear here.
+        </div>
+    </div>
+</body>
+</html>
