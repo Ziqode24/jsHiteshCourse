@@ -13,10 +13,11 @@
         "zhuangtongfa.material-theme",
         "formulahendry.auto-rename-tag",
         "sviat.vscode-javascript-booster",
-        "zongou.vs-seti-firacodenerdfontmono"
+        "zongou.vs-seti-firacodenerdfontmono",
+        "DavidMorais.dark-magic-themes"
       ],
       "settings": {
-        "workbench.colorTheme": "One Dark Pro Darker",
+        "workbench.colorTheme": "Dark Magic Tokyo",
         "terminal.integrated.fontFamily": "monospace",
         "workbench.iconTheme": "vs-seti-firacodenerdfontmono",
   "editor.fontLigatures": true,
