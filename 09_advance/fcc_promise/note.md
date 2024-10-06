@@ -1,8 +1,13 @@
-# Async / Sync
+# Callbacks, Promises, Async/Await, Fetch
 
 ## Synchronous Programming
-**Definition:**
-...
+
+**Defination** is a programming paradigm where operations are executed sequentially. Each operation must complete before the next one begins, leading to a straightforward flow of control. This approach can simplify code logic but may result in performance issues for time-consuming tasks.
+
+**Limitations**
+- `Performance Issues:` Synchronous operations can lead to performance bottlenecks, especially in I/O-intensive applications where the program is unresponsive while waiting for operations to complete.
+- `Blocking UI:` In web applications, synchronous operations can block the user interface, causing the application to freeze and become unresponsive to user input.
+
 
 ## Asynchronous Programming
 - **Definition:** Asynchronous programming is a process that allows an application to run a second set of instructions while focusing on its primary or basic process.
